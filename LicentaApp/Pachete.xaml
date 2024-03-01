@@ -3,40 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LicentaApp.Pachete">
 
-    <ScrollView>
-        <StackLayout>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-
-                <Frame Grid.Row="0" BackgroundColor="LightGray" Margin="10, 10, 10, 0">
-                    <Label Text="Pachet nr.1 Nunta la Castel 230/persoana" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontFamily="Arial"  />
-                </Frame>
-
-                <Frame Grid.Row="1" BackgroundColor="LightBlue" Margin="10, 10, 10, 0">
-                    <Label Text="Pachet nr.2 Nunta de Poveste" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-                </Frame>
-
-                <Frame Grid.Row="4" BackgroundColor="LightPink" Margin="10, 10, 10, 0">
-                    <Label Text="Pachet nr.4 Botez la castel" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-                </Frame>
-
-                <Frame Grid.Row="3" BackgroundColor="LightGreen" Margin="10, 10, 10, 0">
-                    <Label Text="Pachet nr.3 Botez de Poveste" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-                </Frame>
-
-
-
-            </Grid>
-        </StackLayout>
-    </ScrollView>
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Adauga pachete"
+ Clicked="OnPachetAddedClicked" />
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="listView"
+         Margin="20"
+         ItemSelected="OnListViewItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Description}"
+ Detail="{Binding Date}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 
 
 </ContentPage>
