@@ -5,11 +5,11 @@ namespace LicentaApp
 {
     public partial class App : Application
     {
-        public static WebAPIDatabase Database { get; private set; }
+        public static CategoryListDatabase Database { get; private set; }
         public App()
         {
             InitializeComponent();
-            Database = new WebAPIDatabase(new Data.LicentaService<Object>());
+            Database = new CategoryListDatabase(new CategoryService());
 
             MainPage = new NavigationPage(new AppShell());
         }

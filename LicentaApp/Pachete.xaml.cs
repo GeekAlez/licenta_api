@@ -11,7 +11,7 @@ public partial class Pachete : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        listView.ItemsSource = await App.Database.GetObjectsAsync();
+        listView.ItemsSource = await App.Database.GetCategoryAsync();
     }
     async void OnPachetAddedClicked(object sender, EventArgs e)
     {

@@ -8,25 +8,23 @@ using System.Threading.Tasks;
 
 namespace LicentaApp.Data
 {
-    public class LicentaService<A>: ILicentaService<A>
+    public class CategoryService : ICategoryService
     {
         HttpClient client;
 
         //se va modifica ulterior cu ip-ul si portul corespunzator
-        string RestUrl = "https://192.168.17.128:45455/api/{0}";
-        public List<A> Items { get; private set; }
-        
-        public LicentaService()
+        string RestUrl = "https://192.169.0.8:45455/api/shoplists/{0}";
+        public List<Category> Items { get; private set; }
+        public CategoryService()
         {
             var httpClientHandler = new HttpClientHandler();
             httpClientHandler.ServerCertificateCustomValidationCallback =
             (message, cert, chain, errors) => { return true; };
-            
             client = new HttpClient(httpClientHandler);
         }
-        public async Task<List<A>> RefreshDataAsync()
+        public async Task<List<Category>> RefreshDataAsync()
         {
-            Items = new List<A>();
+            Items = new List<Category>();
             Uri uri = new Uri(string.Format(RestUrl, string.Empty));
             try
             {
@@ -34,7 +32,7 @@ namespace LicentaApp.Data
                 if (response.IsSuccessStatusCode)
                 {
                     string content = await response.Content.ReadAsStringAsync();
-                    Items = JsonConvert.DeserializeObject<List<A>>(content);
+                    Items = JsonConvert.DeserializeObject<List<Category>>(content);
                 }
             }
             catch (Exception ex)
@@ -43,15 +41,14 @@ namespace LicentaApp.Data
             }
             return Items;
         }
-       
-        public async Task SaveObjectAsync(A item, bool isNewItem = true)
+        public async Task SaveCategoryAsync(Category item, bool isNewItem = true)
         {
             Uri uri = new Uri(string.Format(RestUrl, string.Empty));
             try
             {
                 string json = JsonConvert.SerializeObject(item);
                 StringContent content = new StringContent(json, Encoding.UTF8,
-                "application/json");
+               "application/json");
                 HttpResponseMessage response = null;
                 if (isNewItem)
                 {
@@ -71,9 +68,9 @@ namespace LicentaApp.Data
                 Console.WriteLine(@"\tERROR {0}", ex.Message);
             }
         }
-        public async Task DeleteObjectAsync(A item)
+        public async Task DeleteCategoryAsync(int id)
         {
-            Uri uri = new Uri(string.Format(RestUrl, item));
+            Uri uri = new Uri(string.Format(RestUrl, id));
             try
             {
                 HttpResponseMessage response = await client.DeleteAsync(uri);
@@ -88,6 +85,5 @@ namespace LicentaApp.Data
             }
         }
     }
-
 }
 

@@ -23,10 +23,8 @@ namespace WebAPI.Migrations
                 {
                     Id = table.Column<short>(type: "smallint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nume = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Poza = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ParentId = table.Column<short>(type: "smallint", nullable: false),
-                    Credit = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Nume = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                   
                 },
                 constraints: table =>
                 {

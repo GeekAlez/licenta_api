@@ -1,4 +1,5 @@
 using LicentaApp;
+using LicentaApp.Models;
 
 namespace LicentaApp;
 
@@ -11,14 +12,14 @@ public partial class Categorii : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        listView.ItemsSource = await App.Database.GetObjectsAsync();
+        listView.ItemsSource = await App.Database.GetCategoryAsync();
     }
     async void OnCategoryAddedClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new CategoryPage
         {
-            BindingContext = new Object()
-        });
+            BindingContext = new Category(1, "Nunta")
+        }) ;
     }
     async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
@@ -26,7 +27,7 @@ public partial class Categorii : ContentPage
         {
             await Navigation.PushAsync(new CategoryPage
             {
-                BindingContext = e.SelectedItem as Object
+                BindingContext = e.SelectedItem as Category
             });
         }
     }
