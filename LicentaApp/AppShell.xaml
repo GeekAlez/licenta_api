@@ -6,8 +6,7 @@
     xmlns:local="clr-namespace:LicentaApp"
     Shell.FlyoutBehavior="Disabled"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-    Shell.TabBarBackgroundColor="{StaticResource Blue300Accent}"
->
+    Shell.TabBarBackgroundColor="{StaticResource Blue300Accent}">
 
     <Shell.BackgroundColor>
         <OnPlatform x:TypeArguments="Color">
@@ -22,30 +21,35 @@
 
     <TabBar>
         <ShellContent
+         Title="Bine ati venit!!"
+         ContentTemplate="{DataTemplate local:StartPage}"
+         Icon="dotnet_bot"/>
+        <ShellContent
             Title="Contacte"
             ContentTemplate="{DataTemplate local:Contacte}"
+            Icon="dotnet_bot"/>
+        <ShellContent
+            Title="Categorii"
+            ContentTemplate="{DataTemplate local:Categorii}"
             Icon="dotnet_bot"/>
         <ShellContent
             Title="Restaurante"
             ContentTemplate="{DataTemplate local:Restaurante}"
             Route="MainPage"
            Icon="dotnet_bot"/>
-        <ShellContent
-            Title="Categorii"
-            ContentTemplate="{DataTemplate local:Categorii}"
+         <ShellContent
+            Title="Pachete"
+            ContentTemplate="{DataTemplate local:Pachete}"
             Icon="dotnet_bot"/>
-        <ShellContent
-            Title="Review"
-            ContentTemplate="{DataTemplate local:Review}"
-            Icon="dotnet_bot"/>
+
         <ShellContent
             Title="Rezervare"
             ContentTemplate="{DataTemplate local:Rezervare}"
             Icon="dotnet_bot"/>
         <ShellContent
-    Title="Pachete"
-    ContentTemplate="{DataTemplate local:Pachete}"
-    Icon="dotnet_bot"/>
+            Title="Review"
+            ContentTemplate="{DataTemplate local:Review}"
+            Icon="dotnet_bot"/>
     </TabBar>
 
 </Shell>

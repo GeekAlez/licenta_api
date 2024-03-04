@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace LicentaApp.Data
 {
-    public interface ILicentaService
+    public interface ILicentaService<A>
     {
-        Task<List<Pachet>> RefreshDataAsync();
-        Task SavePachetAsync(Pachet item, bool isNewItem);
-        Task DeletePachetAsync(int id);
+        Task<List<A>> RefreshDataAsync();
+        Task SaveObjectAsync(A item, bool isNewItem);
+        Task DeleteObjectAsync(A item);
+
     }
 }

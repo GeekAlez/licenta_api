@@ -11,22 +11,22 @@ public partial class Pachete : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        listView.ItemsSource = await App.Database.GetPachetsAsync();
+        listView.ItemsSource = await App.Database.GetObjectsAsync();
     }
     async void OnPachetAddedClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new PachetPage
+        await Navigation.PushAsync(new Pachete
         {
-            BindingContext = new Pachet()
+            BindingContext = new Object()
         });
     }
     async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         if (e.SelectedItem != null)
         {
-            await Navigation.PushAsync(new PachetPage
+            await Navigation.PushAsync(new Pachete
             {
-                BindingContext = e.SelectedItem as Pachet
+                BindingContext = e.SelectedItem as Object
             });
         }
     }

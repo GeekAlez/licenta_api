@@ -9,23 +9,23 @@ namespace LicentaApp.Data
 {
     public class WebAPIDatabase
     {
-        ILicentaService restService;
-        public WebAPIDatabase(ILicentaService service)
+        ILicentaService<A> restService;
+        public WebAPIDatabase(ILicentaService<A> service)
         {
             restService = service;
         }
-        public Task<List<Pachet>> GetPachetsAsync()
+        public Task<List<A>> GetObjectsAsync()
         {
             return restService.RefreshDataAsync();
         }
 
-        public Task SavePachetAsync(Pachet item, bool isNewItem = true)
+        public Task SaveObjectAsync(A item, bool isNewItem = true)
         {
-            return restService.SavePachetAsync(item, isNewItem);
+            return restService.SaveObjectAsync( item, isNewItem);
         }
-        public Task DeletePachetAsync(Pachet item)
+        public Task DeleteObjectAsync(A item)
         {
-            return restService.DeletePachetAsync(item.Id);
+            return restService.DeleteObjectAsync(item);
         }
 
     }

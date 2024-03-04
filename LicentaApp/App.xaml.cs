@@ -9,9 +9,9 @@ namespace LicentaApp
         public App()
         {
             InitializeComponent();
-            Database = new WebAPIDatabase(new LicentaService());
+            Database = new WebAPIDatabase(new Data.LicentaService<Object>());
 
-            MainPage = new NavigationPage(new Pachete());
+            MainPage = new NavigationPage(new AppShell());
         }
     }
 }

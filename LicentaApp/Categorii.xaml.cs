@@ -11,13 +11,24 @@ public partial class Categorii : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        
+        listView.ItemsSource = await App.Database.GetObjectsAsync();
     }
-
-    private void OnButtonClicked(object sender, EventArgs e)
+    async void OnCategoryAddedClicked(object sender, EventArgs e)
     {
-        var categorii = new Categorii();
-        Navigation.PushAsync(categorii);
+        await Navigation.PushAsync(new CategoryPage
+        {
+            BindingContext = new Object()
+        });
+    }
+    async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        if (e.SelectedItem != null)
+        {
+            await Navigation.PushAsync(new CategoryPage
+            {
+                BindingContext = e.SelectedItem as Object
+            });
+        }
     }
 }
 

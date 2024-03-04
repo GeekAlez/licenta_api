@@ -4,19 +4,16 @@
              x:Class="LicentaApp.Pachete">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Adauga pachete"
- Clicked="OnPachetAddedClicked" />
+        <ToolbarItem Text="Adauga categorii disponibile" Clicked="OnPachetAddedClicked" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView"
-         Margin="20"
-         ItemSelected="OnListViewItemSelected">
+        Margin="20"
+        ItemSelected="OnListViewItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Description}"
- Detail="{Binding Date}" />
+                <TextCell Text="{Binding Nume}" />
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-
 
 </ContentPage>

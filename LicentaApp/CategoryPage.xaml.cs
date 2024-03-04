@@ -1,25 +1,29 @@
 using LicentaApp.Models;
+using Microsoft.Maui.Controls;
 using LicentaApp.Data;
+
 
 namespace LicentaApp;
 
-public partial class PachetPage : ContentPage
+public partial class CategoryPage : ContentPage
 {
-	public PachetPage()
+	public CategoryPage()
 	{
 		InitializeComponent();
-	}
+        BindingContext = new A();
+
+    }
 
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
-        var plist = (Pachet)BindingContext;
-        await App.Database.SaveObjectAsync(plist);
+        var slist = (A)BindingContext;
+        await App.Database.SaveObjectAsync(slist);
         await Navigation.PopAsync();
     }
     async void OnDeleteButtonClicked(object sender, EventArgs e)
     {
-        var slist = (Pachet)BindingContext;
-        await App.Database.DeleteObjectAsync(slist);
+        var plist = (A)BindingContext;
+        await App.Database.DeleteObjectAsync(plist);
         await Navigation.PopAsync();
     }
 }

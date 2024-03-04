@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LicentaApp.PachetPage"
-             Title="PachetPage">
+             x:Class="LicentaApp.CategoryPage"
+             xmlns:local="clr-namespace:LicentaApp"
+             Title="CategoryPage">
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Editor Placeholder="Introdu numele pachetului"
-                Text="{Binding Nume}"
-                HeightRequest="100" />
+            <Editor Placeholder="Introdu numele categoriei" Text="{Binding Nume}"
+               HeightRequest="100" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save" Clicked="OnSaveButtonClicked" />
-                <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
+                <Button Text="Salveaza" Clicked="OnSaveButtonClicked" />
+                <Button Grid.Column="1" Text="Sterge" Clicked="OnDeleteButtonClicked"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
