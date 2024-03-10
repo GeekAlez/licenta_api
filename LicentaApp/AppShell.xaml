@@ -25,10 +25,6 @@
          ContentTemplate="{DataTemplate local:StartPage}"
          Icon="dotnet_bot"/>
         <ShellContent
-            Title="Contacte"
-            ContentTemplate="{DataTemplate local:Contacte}"
-            Icon="dotnet_bot"/>
-        <ShellContent
             Title="Categorii"
             ContentTemplate="{DataTemplate local:Categorii}"
             Icon="dotnet_bot"/>

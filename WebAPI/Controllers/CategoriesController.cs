@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
             return await _context.Category.ToListAsync();
         }
 
-        // GET: api/Categories/5
+        // GET: api/Categories
         [HttpGet("{id}")]
         public async Task<ActionResult<Category>> GetCategory(short id)
         {

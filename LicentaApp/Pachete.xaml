@@ -4,16 +4,25 @@
              x:Class="LicentaApp.Pachete">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Adauga categorii disponibile" Clicked="OnPachetAddedClicked" />
+        <ToolbarItem Text="Adauga pachete disponibile" Clicked="OnPachetAddedClicked" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView"
-        Margin="20"
-        ItemSelected="OnListViewItemSelected">
+         Margin="20"
+         ItemSelected="OnListViewItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Nume}" />
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding Nume}" />
+                        <Label Text="{Binding Eveniment}" />
+                        <Label Text="{Binding Locatie}" />
+                        <Label Text="{Binding Pret}" />
+                        <Label Text="{Binding InformatiiSuplimentare}" />
+                    </StackLayout>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+
 
 </ContentPage>

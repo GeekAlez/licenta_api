@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LicentaApp.CategoryPage"
              xmlns:local="clr-namespace:LicentaApp"
-             Title="CategoryPage">
+             Title="CategoryPage"
+             xmlns:models="clr-namespace:Licenta App.Models">
     <ContentPage.Content>
         <StackLayout Margin="20">
             <Editor Placeholder="Introdu numele categoriei" Text="{Binding Nume}"

@@ -5,11 +5,18 @@ namespace LicentaApp
 {
     public partial class App : Application
     {
-        public static CategoryListDatabase Database { get; private set; }
+        public static WebAPIDatabase Database { get; private set; }
+        public static PachetDatabase DatabasePachet { get; private set; }
+        public static RestaurantDatabase DatabaseRestaurant { get; private set; }
+
+
         public App()
         {
             InitializeComponent();
-            Database = new CategoryListDatabase(new CategoryService());
+            Database = new WebAPIDatabase(new CategoryService());
+            DatabasePachet = new PachetDatabase(new PachetService());
+            DatabaseRestaurant = new RestaurantDatabase(new RestaurantService());
+
 
             MainPage = new NavigationPage(new AppShell());
         }

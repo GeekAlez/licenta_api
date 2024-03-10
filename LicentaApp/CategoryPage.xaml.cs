@@ -1,6 +1,7 @@
 ﻿using LicentaApp.Models;
 using Microsoft.Maui.Controls;
 using LicentaApp.Data;
+using System.Diagnostics;
 
 
 namespace LicentaApp;
@@ -10,24 +11,30 @@ public partial class CategoryPage : ContentPage
 	public CategoryPage()
 	{
 		InitializeComponent();
-        Category category = new Category(1, "Nunta");
+        Category category = new Category();
         BindingContext = category;
     }
 
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
-        var slist = (Category)BindingContext;
+        try
+        {
+            var slist = (Category)BindingContext;
 
-        if (slist != null)
+            if (slist != null)
+            {
+                // Obiectul BindingContext nu este nul, poți continua cu operațiunile dorite.
+                await App.Database.SaveCategoryAsync(slist);
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                // Obiectul BindingContext este nul, afișează un mesaj de eroare sau iei alte măsuri.
+                Console.WriteLine("Obiectul BindingContext este nul în OnSaveButtonClicked.");
+            }
+        }catch (Exception ex)
         {
-            // Obiectul BindingContext nu este nul, poți continua cu operațiunile dorite.
-            await App.Database.SaveCategoryAsync(slist);
-            await Navigation.PopAsync();
-        }
-        else
-        {
-            // Obiectul BindingContext este nul, afișează un mesaj de eroare sau iei alte măsuri.
-            Console.WriteLine("Obiectul BindingContext este nul în OnSaveButtonClicked.");
+            Debug.WriteLine($"Eroare la salvare: {ex.Message}");
         }
     }
 

@@ -8,10 +8,10 @@ using LicentaApp.Models;
 
 namespace LicentaApp.Data
 {
-    public class CategoryListDatabase
+    public class WebAPIDatabase
     {
         ICategoryService categoryService;
-        public CategoryListDatabase(ICategoryService service)
+        public WebAPIDatabase(ICategoryService service)
         {
             categoryService = service;
         }

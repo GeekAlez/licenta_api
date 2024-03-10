@@ -8,7 +8,10 @@ namespace LicentaApp.Models
 {
     public class Category
     {
-       
+        public Category()
+        {
+        }
+
 
         //adaugam constrcutorul clasei
         public Category(short id, string nume)

@@ -12,6 +12,7 @@ namespace WebAPI.Data
         public WebAPIContext (DbContextOptions<WebAPIContext> options)
             : base(options)
         {
+
         }
 
         public DbSet<WebAPI.Models.Pachet> Pachet { get; set; } = default!;

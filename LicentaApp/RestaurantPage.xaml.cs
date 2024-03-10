@@ -1,28 +1,27 @@
 ﻿using LicentaApp.Models;
-using LicentaApp.Data;
 using System.Diagnostics;
 
 namespace LicentaApp;
 
-public partial class PachetPage : ContentPage
+public partial class RestaurantPage : ContentPage
 {
-    public PachetPage()
+    public RestaurantPage()
     {
         InitializeComponent();
-        Pachet pachet = new Pachet();
-        BindingContext = pachet;
+        Restaurant restaurant = new Restaurant();
+        BindingContext = restaurant;
     }
 
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
         try
         {
-            var slist = (Pachet)BindingContext;
+            var slist = (Restaurant)BindingContext;
 
             if (slist != null)
             {
                 // Obiectul BindingContext nu este nul, poți continua cu operațiunile dorite.
-                await App.DatabasePachet.SavePachetAsync(slist);
+                await App.DatabaseRestaurant.SaveRestaurantAsync(slist);
                 await Navigation.PopAsync();
             }
             else
@@ -42,8 +41,8 @@ public partial class PachetPage : ContentPage
     {
         try
         {
-            var plist = (Pachet)BindingContext;
-            await App.DatabasePachet.DeletePachetAsync(plist);
+            var plist = (Restaurant)BindingContext;
+            await App.DatabaseRestaurant.DeleteRestaurantAsync(plist);
             await Navigation.PopAsync();
         }
         catch (Exception ex)

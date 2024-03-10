@@ -5,6 +5,7 @@ namespace LicentaApp.Models
 {
     public class Pachet
     {
+
         public int Id { get; set; }
         public string Nume { get; set; }
         public string Eveniment { get; set; }

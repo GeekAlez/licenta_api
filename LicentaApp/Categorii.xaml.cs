@@ -18,7 +18,7 @@ public partial class Categorii : ContentPage
     {
         await Navigation.PushAsync(new CategoryPage
         {
-            BindingContext = new Category(1, "Nunta")
+            BindingContext = new Category()
         }) ;
     }
     async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
