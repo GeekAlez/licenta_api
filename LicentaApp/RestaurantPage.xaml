@@ -7,8 +7,6 @@
         <StackLayout Margin="20">
             <Editor Placeholder="Introdu numele restaurantului" Text="{Binding Nume}"
             HeightRequest="100" />
-            <Editor Placeholder="Introdu sursa imaginii restaurantului" Text="{Binding ImageSource}"
- HeightRequest="100" />
             <Editor Placeholder="Introdu capacitatea restaurantului" Text="{Binding Capacitate}"
  HeightRequest="100" />
             <Editor Placeholder="Introdu locatia restaurantului" Text="{Binding Locatie}"

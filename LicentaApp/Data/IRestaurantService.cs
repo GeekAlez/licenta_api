@@ -11,6 +11,6 @@ namespace LicentaApp.Data
     {
         Task<List<Restaurant>> RefreshRestaurantAsync();
         Task SaveRestaurantAsync(Restaurant item, bool isNewItem);
-        Task DeleteRestaurantAsync(int Id);
+        Task DeleteRestaurantAsync(int id);
     }
 }

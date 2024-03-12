@@ -7,10 +7,9 @@
         <StackLayout Margin="20">
             <Editor Placeholder="Introdu numele pachetului" Text="{Binding Nume}"
             HeightRequest="100" />
-            <Editor Placeholder="Introdu numele evenimentului" Text="{Binding Eveniment}"
+            <Editor Placeholder="Introdu tipul categoriei de eveniment" Text="{Binding Eveniment}"
  HeightRequest="100" />
-            <Editor Placeholder="Introdu locatia evenimentului" Text="{Binding Locatie}"
- HeightRequest="100" />
+            <Picker Title="Alege locatia evenimentului" ItemsSource="{Binding Restaurante, Mode=OneWay}" ItemDisplayBinding="{Binding Locatie}" />
             <Editor Placeholder="Introdu pretul pachetului" Text="{Binding Pret}"
  HeightRequest="100" />
             <Editor Placeholder="Introdu informatii suplimentare ale pachetului" Text="{Binding InformatiiSuplimentare}"
@@ -24,6 +23,7 @@
                 <Button Text="Salveaza" Clicked="OnSaveButtonClicked" />
                 <Button Grid.Column="1" Text="Sterge" Clicked="OnDeleteButtonClicked"/>
             </Grid>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

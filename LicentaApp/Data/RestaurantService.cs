@@ -1,14 +1,15 @@
-﻿using LicentaApp.Models;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LicentaApp.Models;
+using Newtonsoft.Json;
+
 
 namespace LicentaApp.Data
 {
-    public class RestaurantService: IRestaurantService
+    public class RestaurantService : IRestaurantService
     {
         HttpClient client;
 
@@ -32,7 +33,13 @@ namespace LicentaApp.Data
                 if (response.IsSuccessStatusCode)
                 {
                     string content = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine("Conținutul răspunsului: " + content);
                     Items = JsonConvert.DeserializeObject<List<Restaurant>>(content);
+                }
+                else
+                {
+                    Console.WriteLine("Starea răspunsului nu este de succes. Cod: " + response.StatusCode);
+
                 }
             }
             catch (Exception ex)

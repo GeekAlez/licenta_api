@@ -11,6 +11,11 @@ public partial class PachetPage : ContentPage
         InitializeComponent();
         Pachet pachet = new Pachet();
         BindingContext = pachet;
+        Task<List<Restaurant>> restaurant= App.DatabaseRestaurant.GetRestaurantAsync();
+
+        // Setează DataContext-ul pentru pagina ta sau controlul dorit
+        BindingContext = new { Restaurante = restaurant };
+
     }
 
     async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -51,4 +56,6 @@ public partial class PachetPage : ContentPage
             Console.WriteLine($"Eroare în OnSaveButtonClicked: {ex.Message}");
         }
     }
+    
+    
 }

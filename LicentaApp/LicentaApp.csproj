@@ -68,6 +68,9 @@
 	  <MauiXaml Update="CategoryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Contacte.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pachete.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

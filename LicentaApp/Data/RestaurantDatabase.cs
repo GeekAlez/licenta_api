@@ -1,4 +1,5 @@
-﻿using LicentaApp.Models;
+﻿
+using LicentaApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,6 @@ namespace LicentaApp.Data
         {
             restaurantService = service;
         }
-
         public Task<List<Restaurant>> GetRestaurantAsync()
         {
             return restaurantService.RefreshRestaurantAsync();
@@ -28,5 +28,7 @@ namespace LicentaApp.Data
         {
             return restaurantService.DeleteRestaurantAsync(item.Id);
         }
+
     }
 }
+

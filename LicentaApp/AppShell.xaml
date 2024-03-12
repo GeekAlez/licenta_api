@@ -26,7 +26,7 @@
          Icon="dotnet_bot"/>
         <ShellContent
             Title="Categorii"
-            ContentTemplate="{DataTemplate local:Categorii}"
+            ContentTemplate="{DataTemplate local:CategoryPage}"
             Icon="dotnet_bot"/>
         <ShellContent
             Title="Restaurante"
@@ -35,7 +35,7 @@
            Icon="dotnet_bot"/>
          <ShellContent
             Title="Pachete"
-            ContentTemplate="{DataTemplate local:Pachete}"
+            ContentTemplate="{DataTemplate local:PachetPage}"
             Icon="dotnet_bot"/>
 
         <ShellContent
@@ -46,6 +46,10 @@
             Title="Review"
             ContentTemplate="{DataTemplate local:Review}"
             Icon="dotnet_bot"/>
+        <ShellContent
+            Title="Contact"
+            ContentTemplate="{DataTemplate local:Contacte}"
+            Icon="dotnet_bot"/>     
     </TabBar>
 
 </Shell>

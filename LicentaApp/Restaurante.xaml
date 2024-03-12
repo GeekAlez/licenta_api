@@ -14,7 +14,6 @@
                 <ViewCell>
                     <StackLayout>
                         <Label Text="{Binding Nume}" />
-                        <Label Text="{Binding ImageSource}" />
                         <Label Text="{Binding Capacitate}" />
                         <Label Text="{Binding Locatie}" />
                     </StackLayout>
