@@ -8,10 +8,11 @@
             <Editor Placeholder="Introdu numele pachetului" Text="{Binding Nume}"
             HeightRequest="100" />
             <Editor Placeholder="Introdu tipul categoriei de eveniment" Text="{Binding Eveniment}"
- HeightRequest="100" />
-            <Picker Title="Alege locatia evenimentului" ItemsSource="{Binding Restaurante, Mode=OneWay}" ItemDisplayBinding="{Binding Locatie}" />
-            <Editor Placeholder="Introdu pretul pachetului" Text="{Binding Pret}"
- HeightRequest="100" />
+ HeightRequest="100"/>
+            <Picker x:Name="picker"
+                Title="Selecteaza locatia evenimentului"
+                ItemDisplayBinding="{Binding Nume}" />
+            
             <Editor Placeholder="Introdu informatii suplimentare ale pachetului" Text="{Binding InformatiiSuplimentare}"
  HeightRequest="100" />
 

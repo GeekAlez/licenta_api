@@ -19,7 +19,7 @@ namespace LicentaApp.Data
         {
             return restaurantService.RefreshRestaurantAsync();
         }
-
+       
         public Task SaveRestaurantAsync(Restaurant item, bool isNewItem = true)
         {
             return restaurantService.SaveRestaurantAsync(item, isNewItem);

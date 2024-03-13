@@ -1,21 +1,20 @@
 ﻿using LicentaApp.Models;
 using LicentaApp.Data;
 using System.Diagnostics;
+using System.Net.Http.Json;
+using Microsoft.Maui.Controls;
 
 namespace LicentaApp;
 
 public partial class PachetPage : ContentPage
 {
+    IRestaurantService restaurantService;
     public PachetPage()
     {
         InitializeComponent();
         Pachet pachet = new Pachet();
         BindingContext = pachet;
-        Task<List<Restaurant>> restaurant= App.DatabaseRestaurant.GetRestaurantAsync();
-
-        // Setează DataContext-ul pentru pagina ta sau controlul dorit
-        BindingContext = new { Restaurante = restaurant };
-
+        LoadData();
     }
 
     async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -55,7 +54,32 @@ public partial class PachetPage : ContentPage
         {
             Console.WriteLine($"Eroare în OnSaveButtonClicked: {ex.Message}");
         }
+
     }
-    
-    
+    //ce mi a dat pe chat, necesita rearanjare
+    private async void LoadData()
+    {
+        try
+        {
+            // Assuming GetLocationsAsync is a method in App.DatabaseRestaurant that retrieves locations
+            var locations = await App.DatabaseRestaurant.GetRestaurantAsync();
+
+            if (locations != null && locations.Any())
+            {
+                // Bind the retrieved locations to the Picker
+                picker.ItemsSource = locations;
+            }
+            else
+            {
+                // Handle the case where no locations are available
+                // You might want to show an error message or take appropriate action
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading data: {ex.Message}");
+        }
+
+
+    }
 }

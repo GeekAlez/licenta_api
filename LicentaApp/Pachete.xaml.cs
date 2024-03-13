@@ -15,7 +15,7 @@ public partial class Pachete : ContentPage
     }
     async void OnPachetAddedClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new PachetPage
+        await Navigation.PushAsync(new PachetPage()
         {
             BindingContext = new Pachet()
         });

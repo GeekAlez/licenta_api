@@ -10,7 +10,8 @@ using Newtonsoft.Json;
 namespace LicentaApp.Data
 {
     public class RestaurantService : IRestaurantService
-    {
+    { 
+
         HttpClient client;
 
         //se va modifica ulterior cu ip-ul si portul corespunzator
@@ -91,5 +92,7 @@ namespace LicentaApp.Data
                 Console.WriteLine(@"\tERROR {0}", ex.Message);
             }
         }
+        
     }
 }
+        

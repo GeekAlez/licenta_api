@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using LicentaApp.Data;
+using LicentaApp.Models;  // Asigură-te că acest using există și conține clasa RestaurantService
+
 namespace LicentaApp.Models
 {
     public class Pachet
@@ -12,5 +15,6 @@ namespace LicentaApp.Models
         public string Locatie { get; set; }
         public string Pret { get; set; }
         public string InformatiiSuplimentare { get; set; }
+    
     }
 }
