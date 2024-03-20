@@ -3,9 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LicentaApp.StartPage"
              Title="StartPage">
-    <VerticalStackLayout>
-        <Label>LICENTA 2024</Label>
-        
-      
-    </VerticalStackLayout>
+    <Frame CornerRadius="10"
+   BackgroundColor="AliceBlue"
+   BorderColor="Blue"
+   Margin="100">
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Text="Licenta 2024"
+           HorizontalOptions="Center"
+           TextColor="Black" />
+        </StackLayout>
+    </Frame>
 </ContentPage>

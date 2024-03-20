@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAPI.Data;
 
@@ -11,9 +12,11 @@ using WebAPI.Data;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(WebAPIContext))]
-    partial class WebAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20240320115035_FifthCreate")]
+    partial class FifthCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +39,7 @@ namespace WebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category", (string)null);
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Pachet", b =>
@@ -74,7 +77,7 @@ namespace WebAPI.Migrations
 
                     b.HasIndex("RezervareId");
 
-                    b.ToTable("Pachet", (string)null);
+                    b.ToTable("Pachet");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Restaurant", b =>
@@ -99,7 +102,7 @@ namespace WebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Restaurant", (string)null);
+                    b.ToTable("Restaurant");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Rezervare", b =>
@@ -115,7 +118,7 @@ namespace WebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Rezervare", (string)null);
+                    b.ToTable("Rezervare");
                 });
 
             modelBuilder.Entity("WebAPI.Models.SumarRezervare", b =>
@@ -135,7 +138,7 @@ namespace WebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SumarRezervare", (string)null);
+                    b.ToTable("SumarRezervare");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Pachet", b =>

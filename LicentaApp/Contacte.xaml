@@ -3,10 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LicentaApp.Contacte"
              Title="Contacte">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Frame CornerRadius="10"
+       BackgroundColor="AliceBlue"
+       BorderColor="Blue"
+       Margin="100">
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Text="Contact me!"
+               HorizontalOptions="Center"
+               TextColor="Black" />
+            <Label Text="Telefon: 123-456-7890"
+               HorizontalOptions="Center"
+               TextColor="Black" />
+            <Label Text="Email: example@example.com"
+               HorizontalOptions="Center"
+               TextColor="Black" />
+        </StackLayout>
+    </Frame>
 </ContentPage>

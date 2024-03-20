@@ -12,7 +12,7 @@ namespace LicentaApp.Models
         {
         }
 
-        //adaugam constrcutorul clasei
+        //adaugam constructorul clasei
         public Category(short id, string nume)
         {
             Id = id;
