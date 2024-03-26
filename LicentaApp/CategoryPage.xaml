@@ -4,7 +4,8 @@
              x:Class="LicentaApp.CategoryPage"
              xmlns:local="clr-namespace:LicentaApp"
              Title="CategoryPage"
-             xmlns:models="clr-namespace:Licenta App.Models">
+             xmlns:models="clr-namespace:Licenta App.Models"
+             BackgroundColor="LightBlue">
     <ContentPage.Content>
         <StackLayout Margin="20">
             <Editor Placeholder="Introdu numele categoriei" Text="{Binding Nume}"

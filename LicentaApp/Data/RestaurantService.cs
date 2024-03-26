@@ -15,7 +15,7 @@ namespace LicentaApp.Data
         HttpClient client;
 
         //se va modifica ulterior cu ip-ul si portul corespunzator
-        string RestUrl = "https://localhost:7116/api/Restaurants{0}";
+        string RestUrl = "https://localhost:7116/api/Restaurants/{0}";
         public List<Restaurant> Items { get; private set; }
         public RestaurantService()
         {
@@ -92,7 +92,9 @@ namespace LicentaApp.Data
                 Console.WriteLine(@"\tERROR {0}", ex.Message);
             }
         }
+
         
+
     }
 }
         

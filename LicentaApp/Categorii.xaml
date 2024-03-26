@@ -4,7 +4,8 @@
              x:Class="LicentaApp.Categorii"
              xmlns:models="clr-namespace:LicentaApp.Models"
              xmlns:local="clr-namespace:LicentaApp"
-             Title="Categorii disponibile">
+             Title="Categorii disponibile"
+             BackgroundColor="LightBlue">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Adauga categorii disponibile" Clicked="OnCategoryAddedClicked" />

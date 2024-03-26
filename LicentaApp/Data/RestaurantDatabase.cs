@@ -29,6 +29,8 @@ namespace LicentaApp.Data
             return restaurantService.DeleteRestaurantAsync(item.Id);
         }
 
+        
+
     }
 }
 

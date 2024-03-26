@@ -11,7 +11,7 @@
 
     <Shell.BackgroundColor>
         <OnPlatform x:TypeArguments="Color">
-            <On Platform="iOS" Value="White" />
+            <On Platform="iOS" Value="Beige" />
             <On Platform="Android" Value="#ADD8E6" />
         </OnPlatform>
     </Shell.BackgroundColor>
@@ -27,7 +27,7 @@
          Icon="dotnet_bot"/>
         <ShellContent
             Title="Categorii"
-            ContentTemplate="{DataTemplate local:CategoryPage}"
+            ContentTemplate="{DataTemplate local:Categorii}"
             Icon="dotnet_bot"/>
         <ShellContent
             Title="Restaurante"

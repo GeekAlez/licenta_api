@@ -14,11 +14,11 @@ public partial class PachetPage : ContentPage
         InitializeComponent();
         Pachet pachet = new Pachet();
         BindingContext = pachet;
-        LoadData();
-        LoadCategorie();
+       // LoadData();
+      //  LoadCategorie();
         
     }
-    private async void LoadData()
+    /*private async void LoadData()
     {
         try
         {
@@ -66,7 +66,7 @@ public partial class PachetPage : ContentPage
             Console.WriteLine($"Error loading data: {ex.Message}");
         }
 
-    }
+    }*/
     async void OnSaveButtonClicked(object sender, EventArgs e)
         {
             try

@@ -13,7 +13,7 @@ namespace LicentaApp.Data
         HttpClient client;
 
         //se va modifica ulterior cu ip-ul si portul corespunzator
-        string RestUrl = "https://localhost:7116/api/Pachets{0}";
+        string RestUrl = "https://localhost:7116/api/Pachets/{0}";
         public List<Pachet> Items { get; private set; }
         public PachetService()
         {

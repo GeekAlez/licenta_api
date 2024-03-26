@@ -20,5 +20,6 @@ namespace WebAPI.Data
         public DbSet<WebAPI.Models.Restaurant> Restaurant { get; set; } = default!;
         public DbSet<WebAPI.Models.Rezervare> Rezervare { get; set; } = default!;
         public DbSet<WebAPI.Models.SumarRezervare> SumarRezervare { get; set; } = default!;
+        public DbSet<WebAPI.Models.Utilizator> Utilizator { get; set; } = default!;
     }
 }

@@ -2,14 +2,14 @@
 {
     public class Category
     {
-        public Category(short id, string nume)
+        public Category(int id, string nume)
         {
             Id = id;
             Nume = nume;
             
 
         }
-        public short Id { get; set; }
+        public int Id { get; set; }
         public string Nume { get; set; }
        
     }
