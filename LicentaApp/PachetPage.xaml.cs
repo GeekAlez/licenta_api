@@ -3,6 +3,7 @@ using LicentaApp.Data;
 using System.Diagnostics;
 using System.Net.Http.Json;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 
 namespace LicentaApp;
 
@@ -14,10 +15,12 @@ public partial class PachetPage : ContentPage
         InitializeComponent();
         Pachet pachet = new Pachet();
         BindingContext = pachet;
-       // LoadData();
-      //  LoadCategorie();
+        //LoadData();
+        //LoadCategorie();
         
     }
+
+  
     /*private async void LoadData()
     {
         try
@@ -28,7 +31,7 @@ public partial class PachetPage : ContentPage
             if (locatie != null && locatie.Any())
             {
                 // Bind the retrieved locations to the Picker
-                picker.ItemsSource = locatie;
+                pickerlocatie.ItemsSource = locatie;
             }
             else
             {
@@ -53,7 +56,7 @@ public partial class PachetPage : ContentPage
             if (eveniment != null && eveniment.Any())
             {
                 // Bind the retrieved locations to the Picker
-                pickercategory.ItemsSource = eveniment;
+                pickereveniment.ItemsSource = eveniment;
             }
             else
             {
@@ -67,6 +70,8 @@ public partial class PachetPage : ContentPage
         }
 
     }*/
+
+
     async void OnSaveButtonClicked(object sender, EventArgs e)
         {
             try

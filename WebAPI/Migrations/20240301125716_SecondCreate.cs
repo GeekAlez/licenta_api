@@ -21,7 +21,7 @@ namespace WebAPI.Migrations
                 name: "Category",
                 columns: table => new
                 {
-                    Id = table.Column<short>(type: "smallint", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nume = table.Column<string>(type: "nvarchar(max)", nullable: false)
                    
@@ -38,7 +38,6 @@ namespace WebAPI.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nume = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageSource = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Capacitate = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Locatie = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },

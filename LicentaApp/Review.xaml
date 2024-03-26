@@ -5,7 +5,11 @@
              Title="Review"
              BackgroundColor="LightBlue">
 
-    <StackLayout BackgroundColor="#F0F0F0">
+    <Frame CornerRadius="10"
+            BackgroundColor="AliceBlue"
+            BorderColor="Blue"
+            Margin="100">
+        <StackLayout BackgroundColor="#F0F0F0">
         <Image Source="poza.jpeg" Aspect="AspectFill" HeightRequest="200"/>
 
         <StackLayout x:Name="ReviewStackLayout">
@@ -29,4 +33,5 @@
         <Entry x:Name="ReviewEntry" Placeholder="Scrie aici review-ul" BackgroundColor="#FFF" TextColor="Black"/>
         <Button Text="Trimite Review" Clicked="OnSendReviewClicked" BackgroundColor="#3498DB" TextColor="#FFF" CornerRadius="5" Margin="0,0,0,10"/>
     </StackLayout>
+    </Frame>
 </ContentPage>

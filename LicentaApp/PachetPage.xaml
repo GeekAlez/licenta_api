@@ -6,17 +6,18 @@
              BackgroundColor="LightBlue">
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Editor Placeholder="Introdu numele pachetului" Text="{Binding Nume}" HeightRequest="100" />
-           
-            <Picker x:Name="pickercategory"
-                Title="Selecteaza tipul evenimentului"
-                ItemDisplayBinding="{Binding Eveniment}" />
-            <Picker x:Name="picker"
-                Title="Selecteaza locatia evenimentului"
-                ItemDisplayBinding="{Binding Locatie}" />
-            
-            <Editor Placeholder="Introdu informatii suplimentare ale pachetului" Text="{Binding InformatiiSuplimentare}"
- HeightRequest="100" />
+            <Editor Placeholder="Introdu numele restaurantului" Text="{Binding Nume}"
+           HeightRequest="100" />
+
+            <Picker x:Name="pickereveniment" 
+             ItemsSource="{Binding Eveniment}" />
+            <Picker  x:Name="pickerlocatie"
+            ItemsSource="{Binding Locatie}" />
+
+            <Editor Placeholder="Introdu capacitatea restaurantului" Text="{Binding Pret}"
+HeightRequest="100" />
+            <Editor Placeholder="Introdu locatia restaurantului" Text="{Binding InformatiiSuplimentare}"
+HeightRequest="100" />
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -26,7 +27,6 @@
                 <Button Text="Salveaza" Clicked="OnSaveButtonClicked" />
                 <Button Grid.Column="1" Text="Sterge" Clicked="OnDeleteButtonClicked"/>
             </Grid>
-            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
