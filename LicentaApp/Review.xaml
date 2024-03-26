@@ -8,10 +8,9 @@
     <Frame CornerRadius="10"
             BackgroundColor="AliceBlue"
             BorderColor="Blue"
-            Margin="100">
-        <StackLayout BackgroundColor="#F0F0F0">
-        <Image Source="poza.jpeg" Aspect="AspectFill" HeightRequest="200"/>
-
+            Margin="10">
+        <StackLayout BackgroundColor="LightSkyBlue">
+        
         <StackLayout x:Name="ReviewStackLayout">
             <Label Text="Review-uri:" FontSize="18" TextColor="#333" Margin="0,10"/>
             <ListView x:Name="ReviewListView">

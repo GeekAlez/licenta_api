@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAPI.Data;
 
@@ -10,9 +11,11 @@ using WebAPI.Data;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(WebAPIContext))]
-    partial class WebAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20240326210642_Eight")]
+    partial class Eight
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -108,6 +111,26 @@ namespace WebAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Rezervare");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.SumarRezervare", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PachetId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PachetNume")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SumarRezervare");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Utilizator", b =>

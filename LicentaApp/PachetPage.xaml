@@ -10,14 +10,19 @@
            HeightRequest="100" />
 
             <Picker x:Name="pickereveniment" 
-             ItemsSource="{Binding Eveniment}" />
+                    Title="Selecteaza evenimentul"
+                    ItemsSource="{Binding ListaIdsRestaurante}"
+                    SelectedItem="{Binding IdRestaurantSelectat}"/>
+            
             <Picker  x:Name="pickerlocatie"
-            ItemsSource="{Binding Locatie}" />
+                      ItemsSource="{Binding Locatie}"
+                     Title="Selecteaza locatia"/>
 
             <Editor Placeholder="Introdu capacitatea restaurantului" Text="{Binding Pret}"
-HeightRequest="100" />
+    HeightRequest="100" />
+            
             <Editor Placeholder="Introdu locatia restaurantului" Text="{Binding InformatiiSuplimentare}"
-HeightRequest="100" />
+    HeightRequest="100" />
 
             <Grid>
                 <Grid.ColumnDefinitions>

@@ -9,19 +9,21 @@ namespace LicentaApp;
 
 public partial class PachetPage : ContentPage
 {
-    IRestaurantService restaurantService;
+    //IRestaurantService restaurantService;
+
     public PachetPage()
     {
         InitializeComponent();
         Pachet pachet = new Pachet();
+
+
         BindingContext = pachet;
         //LoadData();
         //LoadCategorie();
-        
-    }
 
-  
-    /*private async void LoadData()
+    }
+   
+     /*   private async void LoadData()
     {
         try
         {

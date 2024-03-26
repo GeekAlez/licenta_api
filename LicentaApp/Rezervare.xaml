@@ -6,5 +6,15 @@
              Title="Rezervare"
              BackgroundColor="LightBlue" >
 
-    <cal:Calendar/>
+    <ScrollView>
+    
+    
+     <StackLayout Margin="20">
+            <Label Text="Selecteaza un restaurant caruia ii doresti calendarul"/>
+            <Picker x:Name="pickerrestaurant"
+                    SelectedItem="{Binding Nume}"/>
+            <cal:Calendar/>
+    </StackLayout>
+   
+    </ScrollView>
 </ContentPage> 

@@ -11,6 +11,6 @@ namespace LicentaApp.Data
     {
         Task<List<Category>> RefreshDataAsync();
         Task SaveCategoryAsync(Category item, bool isNewItem);
-        Task DeleteCategoryAsync(int Id);
+        Task DeleteCategoryAsync(int id);
     }
 }

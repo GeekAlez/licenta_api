@@ -68,9 +68,9 @@ namespace LicentaApp.Data
                 Console.WriteLine(@"\tERROR {0}", ex.Message);
             }
         }
-        public async Task DeleteCategoryAsync(int Id)
+        public async Task DeleteCategoryAsync(int id)
         {
-            Uri uri = new Uri(string.Format(RestUrl, Id));
+            Uri uri = new Uri(string.Format(RestUrl, id));
             try
             {
                 HttpResponseMessage response = await client.DeleteAsync(uri);

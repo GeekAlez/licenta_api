@@ -7,30 +7,32 @@ public partial class Rezervare : ContentPage
 	public Rezervare()
 	{
 	InitializeComponent();
-	}
-
-    public async void OnTrimiteClicked(object sender, EventArgs e)
-    {
-        await DisplayAlert("Ok", "Mulțumim pentru rezervare! Veți primi un e-mail în legătură cu aceasta.", "OK");
+    LoadData();
     }
 
-    
-
-
-    private void OnEntryTextChanged(object sender, TextChangedEventArgs e)
+    private async void LoadData()
     {
-        // Verificare validitate
-        if (!IsValid(e.NewTextValue))
+        try
         {
-            // Afiseaza un mesaj de eroare sau iau alte masuri
-            DisplayAlert("Eroare", "Numele trebuie să conțină doar litere", "OK");
-        }
-    }
+            // Assuming GetLocationsAsync is a method in App.DatabaseRestaurant that retrieves locations
+            var nume = await App.DatabaseRestaurant.GetRestaurantAsync();
 
-    private bool IsValid(string text)
-    {
-        // Logica de validare, de exemplu, doar litere
-        return Regex.IsMatch(text, "^[a-zA-Z]+$");
+            if (nume != null && nume.Any())
+            {
+                // Bind the retrieved locations to the Picker
+                pickerrestaurant.ItemsSource = nume;
+            }
+            else
+            {
+                // Handle the case where no locations are available
+                // You might want to show an error message or take appropriate action
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading data: {ex.Message}");
+        }
+
     }
 
 }

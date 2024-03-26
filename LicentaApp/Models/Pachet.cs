@@ -15,6 +15,5 @@ namespace LicentaApp.Models
         public int Locatie { get; set; }
         public string Pret { get; set; }
         public string InformatiiSuplimentare { get; set; }
-    
     }
 }
